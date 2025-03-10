@@ -57,6 +57,8 @@ TIP: [Rappel Git] Trois dépôts sont ici utilisés : le dépot Github de l'ense
 * Observer le code du projet `todolist-debut-ex1`
 
 *Le code est-il structuré en couches ? Quel problèmes ce code peut-il poser ?*
+Non, elle n'est pas structuré par couche mais les fichiers sont uniquement modifiés dans un seul repository.
+Ce qui est contraire aux bonnes conventions de code (d'où l'utilité de structuré en couche)
 
 Maintenabilité Réduite : Sans séparation claire des responsabilités, le code peut devenir difficile à maintenir et à mettre à jour
 Réutilisabilité Limitée : Les composants ne sont pas isolés, ce qui rend difficile leur réutilisation dans d'autres projets ou contextes.
@@ -88,6 +90,9 @@ Cette ligne de commande lance un conteneur Docker exécutant PostgreSQL :
 * Compléter le code manquant dans la méthode `TodoListController.createTodoItem()`
 
 *Pourquoi `todoItemRepository` est-il `null` ? Quelle est la meilleure façon de l'injecter ?*
+todoItemRepository est null, cela signifie probablement que l'injection de dépendances n'a pas fonctionné correctement.
+La meilleure façon de l'injecter est d'utiliser l'annotation @Autowired de Spring sur le constructeur du contrôleur
+
 
 * Modifier le code en conséquence.
 
