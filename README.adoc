@@ -1,13 +1,13 @@
 # TP MIAGE conception logicielle
 
-## Nom du(des) étudiant(e)(s) de ce monôme/binôme 
+## Nom du(des) étudiant(e)(s) de ce monôme/binôme
 WARNING: NE PAS OUBLIER DE MENTIONNER LES DEUX NOMS SI VOUS ETES EN BINOME!
 
 BESILY Michaël et CRONIER Romain
 
 Commentaires éventuels des étudiants : Aucune
 
-## Pré-requis 
+## Pré-requis
 
 * Disposer d'**une machine dotée d'au moins 8 Gio** de RAM avec 20 Gio de disque disponible ; **Un PC par binôme suffit**, choisir le plus puissant (avec le plus de RAM).
 * Disposer d'une **connexion internet hors université** pendant le TP (le réseau de l'université semble bloquer un certain nombre de choses). En cas d'urgence, je peux fournir de la data en 5G.
@@ -101,8 +101,8 @@ La meilleure façon de l'injecter est d'utiliser l'annotation @Autowired de Spri
 
 [NOTE]
 ====
-* Les URL des endpoints sont renseignées dans le contrôleur via les annotation `@...Mapping` 
-* Exemple de body JSON : 
+* Les URL des endpoints sont renseignées dans le contrôleur via les annotation `@...Mapping`
+* Exemple de body JSON :
 
 ```json
 {
@@ -124,21 +124,24 @@ _Temps estimé : 1 h 20_
 
 * Partir du projet `todolist-debut-ex2`
 
-NOTE: Le projet a été réusiné suivant les principes de l'architecture hexagonale : 
+NOTE: Le projet a été réusiné suivant les principes de l'architecture hexagonale :
 
 image::images/archi_hexagonale.png[]
 Source : http://leanpub.com/get-your-hands-dirty-on-clean-architecture[Tom Hombergs]
 
-* Nous avons découpé le coeur en deux couches : 
+* Nous avons découpé le coeur en deux couches :
   - la couche `application` qui contient tous les contrats : ports (interfaces) et les implémentations des ports d'entrée (ou "use case") et qui servent à orchestrer les entités.
   - la couche `domain` qui contient les entités (au sens DDD, pas au sens JPA). En général des classes complexes (méthodes riches, relations entre les entités)
 
 *Rappeler en quelques lignes les grands principes de l'architecture hexagonale.*
+L'architecture est séparé en deux parties :
+- La partie fonctionnelle (centrale) : C'est la partie de la solution qui va répondre aux corps de métier
+- La partie technique : C'est la partie qui va gérer les échanges de données
 
 Compléter ce code avec une fonctionnalité de création de `TodoItem`  persisté en base et appelé depuis un endpoint REST `POST /todos` qui :
 
 * prend un `TodoItem` au format JSON dans le body (voir exemple de contenu plus haut);
-* renvoie un code `201` en cas de succès. 
+* renvoie un code `201` en cas de succès.
 
 La fonctionnalité à implémenter est contractualisée par le port d'entrée `AddTodoItem`.
 
@@ -149,7 +152,7 @@ _Temps estimé : 20 mins_
 
 * Implémenter (en junit) des TU portant sur la règle de gestion qui consiste à afficher `[LATE!]` dans la description d'un item en retard de plus de 24h.
 
-*Quels types de tests devra-t-on écrire pour les adaptateurs ?* 
+*Quels types de tests devra-t-on écrire pour les adaptateurs ?*
 
 *S'il vous reste du temps, écrire quelques-uns de ces types de test.*
 

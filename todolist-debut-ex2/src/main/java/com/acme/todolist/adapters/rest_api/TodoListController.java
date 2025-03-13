@@ -22,7 +22,7 @@ public class TodoListController {
 	
 	
 	private GetTodoItems getTodoItemsQuery;
-	// A compléter
+	private AddTodoItems
 	
 	
 	@Inject
@@ -38,9 +38,9 @@ public class TodoListController {
 	
 	
 	// Endpoint de type POST vers "/todos"
-	// A compléter
+	@PostMapping("/todos")
 	public void ajouterItem(@RequestBody TodoItem item) {
-		// A compléter		
+		return this.a
 	}
 	
 	
